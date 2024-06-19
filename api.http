@@ -11,6 +11,7 @@ Content-Type: application/json
   "date": "2017-01-01T00:00:00",
   "price": 100
 }
+
 ###
 @eventId = {{createEvent.response.body.id}}
 
@@ -30,3 +31,16 @@ Content-Type: application/json
 
 ###
 DELETE   http://localhost:3000/events/{{eventId}}
+
+# REQUISIÇÕES SPOTS
+###
+GET http://localhost:3000/events/{{eventId}}/spots
+
+###
+# @name createSpot
+POST http://localhost:3000/events/{{eventId}}/spots
+Content-Type: application/json
+
+{
+  "name": "A4"
+}
